@@ -68,7 +68,8 @@ start:
     
     
     bad_input:
-    ;zavrsi programata
+    mov ax, 4c00h ; exit to operating system.
+    int 21h
     
     create_num:
     mov ax,0d 
