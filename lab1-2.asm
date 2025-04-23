@@ -18,7 +18,10 @@ start:
     mov es, ax    
     
     
-     ; add your code here                
+     ; add your code here
+     ;;idejata e da se sostavi brojot po cifri: primer za 234 = 200 + 30 + 4 
+     ;;kodot go pravi ova: (2 * 100) + (3*10) + (4 * 1) 
+                   
     
     mov bx, 100d
     
@@ -28,14 +31,14 @@ start:
     int 21h
     mov ah,0
     
-    sub al,'0'
-    mul bx
+    sub al,'0' ; se dobiva vrednosta na brojot bidejki tuka e kako ascii karakter vnesen
+    mul bx   ;; 
    
     add broj,ax
     
     mov ax, bx
     mov cx, 10
-    div cx      
+    div cx        ; se deli bx so 10 dodeka ne e nula
     mov bx, ax 
     
     mov ah,0
@@ -49,24 +52,6 @@ start:
     mov dx, broj
     int 21h    
     
-     
-    
-    
-
-   
-    
-    
-     
-    ;;;;
-    
-            
-    ;lea dx, pkey
-    ;mov ah, 9
-    ;int 21h        ; output string at ds:dx
-    
-    ; wait for any key....    
-    ;mov ah, 1
-    ;int 21h
     
     mov ax, 4c00h ; exit to operating system.
     int 21h    

@@ -4,7 +4,7 @@ data segment
     ; add your data here!
     pkey db "press any key...$"
     o1 dw 3d
-    o2 dw 2d
+    o2 dw 4d
     o3 dw 5d
 ends
 
@@ -34,16 +34,7 @@ start:
     mov ah,02h
     int 21h
     
-    
-    
-            
-    lea dx, pkey
-    mov ah, 9
-    int 21h        ; output string at ds:dx
-    
-    ; wait for any key....    
-    mov ah, 1
-    int 21h
+      
     
     mov ax, 4c00h ; exit to operating system.
     int 21h    
